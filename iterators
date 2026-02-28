@@ -1,0 +1,35 @@
+#simple iterator
+my_list = [1, 2, 3]
+my_iterator = iter(my_list)
+
+print("iterator:")
+print(next(my_iterator)) # 1
+print(next(my_iterator)) # 2
+
+#iterator with yield
+def simple_generator():
+    yield "A"
+    yield "B"
+    yield "C"
+
+print("\nGenerator:")
+gen = simple_generator()
+for item in gen:
+    print(item)
+
+
+#fibonacci
+def fibonacci_generator(limit=None):
+    a, b = 0, 1
+    count = 0
+    while limit is None or count < limit:
+        yield a
+        a, b = b, a + b
+        count += 1
+
+print("initial 10 digit fibonacci:")
+for i, num in enumerate(fibonacci_generator(10)):
+    print(f"{i+1}: {num}")
+
+fib_sum = sum(fibonacci_generator(10)) 
+print(f"sum of initial 10digits of fibonacci")
