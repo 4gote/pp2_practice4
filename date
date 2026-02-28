@@ -1,0 +1,28 @@
+from datetime import date, time, datetime, timedelta
+
+#Current date
+today = date.today()
+print(f"Today is: {today}")
+
+#current date and time
+now = datetime.now()
+print(f"Time : {now}")
+
+#Date in next n day
+next_week = today + timedelta(days=n)
+print(f"After n day: {next_week}")
+
+
+#timezones
+from datetime import datetime
+from zoneinfo import ZoneInfo
+utc_now = datetime.now(ZoneInfo('UTC'))
+print(f"Time in UTC: {utc_now}")
+moscow_time = utc_now.astimezone(ZoneInfo('Europe/Moscow'))
+print(f"Time in Moscow: {moscow_time}")
+ny_time = datetime(2024, 7, 4, 12, 0, tzinfo=ZoneInfo('America/New_York'))
+print(f"Time in New York: {ny_time}")
+if moscow_time > ny_time:
+    print(f"Now in Moscow ({moscow_time}) is later than in NY ({ny_time})")
+else:
+    print(f"Now in Moscow is earlier than in NY")
