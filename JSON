@@ -1,0 +1,14 @@
+import json
+person = {
+    "name": "Aibek",
+    "age": 25,
+    "city": "Almaty",
+    "hobbies": ["programming", "cycling"]
+}
+json_string = json.dumps(person, indent=4)
+print("Python to JSON:")
+print(json_string)
+json_input = '{"name": "Maria", "age": 25, "is_student": true}'
+python_dict = json.loads(json_input)
+print(f"\nJSON to Python: {python_dict}")
+print(f"Name: {python_dict['name']}, Student: {python_dict['is_student']}")
