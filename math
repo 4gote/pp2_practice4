@@ -1,0 +1,10 @@
+import math
+import random
+numbers = [4.3, -7.2, 9.1, -1.5]
+print(f"Maximum: {max(numbers)}")
+print(f"Minimum: {min(numbers)}")
+print(f"Absolute value of -5: {abs(-5)}")
+
+#random
+print(f"Random number from 1 to 10: {random.randint(1, 10)}")
+print(f"Random element from list: {random.choice(['rock', 'paper', 'scissors'])}")
